@@ -190,6 +190,6 @@ The timeline dynamically detects your new artifact, renders its card, adds it to
   1. **Priyanshu Kumar** — Reg. No: `RA2411003010752` *(Historical Curation & Epoch Research)*
   2. **Muskan Kumari** — Reg. No: `RA2411003010756` *(Art History Analysis & Documentation)*
   3. **Abhishek Jaiswal** — Reg. No: `RA2411003010764` *(Front-End Architecture & UI/UX Design)*
-  4. **Prakhar Pandey** — Reg. No: `RA2411003010736` *(Vector Replicas & Interactive Systems)*
+  4. **Prakhar Pandey** — Reg. No: `RA2411003010737` *(Vector Replicas & Interactive Systems)*
 - **Submission Date:** October 2026
 - **License:** Educational Fair Use & Creative Commons Attribution (CC BY 4.0)
