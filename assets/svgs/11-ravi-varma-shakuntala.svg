@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="varmaAura" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#E59866" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sariRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E74C3C"/>
+      <stop offset="60%" stop-color="#B03A2E"/>
+      <stop offset="100%" stop-color="#78281F"/>
+    </linearGradient>
+    <linearGradient id="forestGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#85C1E9"/>
+      <stop offset="40%" stop-color="#A9DFBF"/>
+      <stop offset="100%" stop-color="#1E8449"/>
+    </linearGradient>
+    <filter id="canvasShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="200" r="185" fill="url(#varmaAura)"/>
+
+  <!-- GILDED VICTORIAN PICTURE FRAME -->
+  <g filter="url(#canvasShadow)">
+    <rect x="45" y="25" width="310" height="330" rx="6" fill="#D4AC0D" stroke="#7D6608" stroke-width="2"/>
+    <rect x="52" y="32" width="296" height="316" fill="#9A7D0A" stroke="#F9E79F" stroke-width="1.5"/>
+    <rect x="60" y="40" width="280" height="300" fill="url(#forestGlow)"/>
+
+    <!-- LUSH ASHRAM FOREST BACKGROUND -->
+    <!-- Distant trees & soft sunlight filtering through canopy -->
+    <path d="M60 140 C110 110 160 135 220 120 C280 105 320 130 340 120 L340 340 L60 340 Z" fill="#145A32"/>
+    <ellipse cx="200" cy="110" rx="90" ry="30" fill="#F9E79F" opacity="0.3"/>
+
+    <!-- Forest tree trunks & hanging lianas -->
+    <path d="M90 40 L85 240" stroke="#4A235A" stroke-width="8" opacity="0.4"/>
+    <path d="M310 40 L315 250" stroke="#4A235A" stroke-width="10" opacity="0.4"/>
+    <!-- Tropical palm fronds & leaves -->
+    <path d="M60 60 Q120 70 140 100" stroke="#1E8449" stroke-width="4" fill="none"/>
+    <path d="M60 80 Q130 90 145 120" stroke="#196F3D" stroke-width="4" fill="none"/>
+    <path d="M340 60 Q280 70 260 100" stroke="#1E8449" stroke-width="4" fill="none"/>
+    <path d="M340 85 Q275 95 255 125" stroke="#196F3D" stroke-width="4" fill="none"/>
+
+    <!-- SHAKUNTALA'S TWO COMPANIONS (Anasuya & Priyamvada in background left) -->
+    <g transform="translate(100, 160)" opacity="0.85">
+      <!-- Companion 1 -->
+      <path d="M12 40 C10 60 8 95 14 110 L30 110 C32 95 32 60 28 40 Z" fill="#2980B9"/>
+      <circle cx="20" cy="30" r="8" fill="#EDBB99"/>
+      <!-- Companion 2 (smiling knowingly) -->
+      <path d="M32 45 C30 65 28 95 34 110 L48 110 C50 95 50 65 46 45 Z" fill="#F39C12"/>
+      <circle cx="39" cy="35" r="7.5" fill="#EDBB99"/>
+    </g>
+
+    <!-- SHAKUNTALA (CENTRAL PROTAGONIST) -->
+    <!-- Turning around, pretending to pull a thorn from sole of her foot -->
+    <g transform="translate(165, 140)">
+      <!-- Saffron / Rich Red Saree Drapery (Classical Ravi Varma folds) -->
+      <!-- Lower Saree (Pleated skirts & graceful fold cascade) -->
+      <path d="M25 80 C15 110 5 150 10 170 C25 174 65 174 78 170 C80 140 75 105 60 80 Z" 
+            fill="url(#sariRed)" stroke="#641E16" stroke-width="1.2"/>
+      <!-- Saree Golden Zari Border (Gota patti) -->
+      <path d="M10 166 C25 170 65 170 78 166" stroke="#F1C40F" stroke-width="3" fill="none"/>
+      <!-- Cascade of pleats -->
+      <path d="M40 85 C38 115 35 145 36 168" stroke="#78281F" stroke-width="2" fill="none"/>
+      <path d="M48 85 C46 115 44 145 46 168" stroke="#78281F" stroke-width="2" fill="none"/>
+      <path d="M56 85 C55 115 54 145 56 168" stroke="#78281F" stroke-width="2" fill="none"/>
+
+      <!-- BENT LEG & FOOT (Posing to inspect the "thorn") -->
+      <!-- Right leg standing firm -->
+      <path d="M30 168 L32 188" stroke="#EDBB99" stroke-width="8" stroke-linecap="round"/>
+      <!-- Left leg bent back, heel raised with fingers touching sole -->
+      <path d="M60 160 C75 168 85 175 75 185" stroke="#EDBB99" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <!-- Hand reaching down to touch foot -->
+      <path d="M68 135 C75 150 78 165 72 178" stroke="#EDBB99" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <!-- TORSO (Contrapunto twist: hips forward, shoulders twisted back) -->
+      <path d="M28 45 C25 60 22 75 25 85 C38 88 58 88 62 85 C65 75 62 60 58 45 Z" fill="url(#sariRed)"/>
+
+      <!-- Translucent white pallu / shawl draped over shoulder -->
+      <path d="M30 45 C20 60 15 90 22 120 C32 120 38 80 40 55" fill="#FAF6EF" fill-opacity="0.65" stroke="#F1C40F" stroke-width="1"/>
+
+      <!-- Bare Golden Arm & Traditional Gold Bangles -->
+      <path d="M28 48 C18 65 14 85 18 100" stroke="#EDBB99" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <!-- Gold bangles on wrist -->
+      <line x1="16" y1="96" x2="20" y2="98" stroke="#F1C40F" stroke-width="2.5"/>
+
+      <!-- HEAD & NECK (Turned back over left shoulder looking toward viewer/Dushyanta) -->
+      <path d="M38 30 C38 38 42 45 46 45 C50 45 52 38 52 30 Z" fill="#EDBB99"/>
+
+      <!-- Face (Luminous complexion, expressive classical almond eyes) -->
+      <ellipse cx="48" cy="24" rx="9" ry="11" fill="#F5CBA7"/>
+      <!-- Coiled hair bun adorned with jasmine garland (Mogra Gajra) -->
+      <ellipse cx="40" cy="20" rx="7" ry="9" fill="#1C2833"/>
+      <path d="M35 15 C33 22 35 28 38 30" stroke="#FAF6EF" stroke-width="3" stroke-dasharray="2 2" fill="none"/>
+
+      <!-- Facial features looking back over shoulder -->
+      <!-- Profile contour -->
+      <path d="M52 18 L55 24 L52 28" stroke="#A04000" stroke-width="0.8" fill="none"/>
+      <!-- Soulful dark eye stealing a glance -->
+      <ellipse cx="50" cy="22" rx="2" ry="1.5" fill="#1C2833"/>
+      <circle cx="51" cy="21.5" r="0.6" fill="#FFFFFF"/>
+      <path d="M47 18 Q51 16 54 18" stroke="#1C2833" stroke-width="1" fill="none"/>
+      <!-- Vermilion lips -->
+      <path d="M51 29 Q54 31 53 32" stroke="#922B21" stroke-width="1.2" fill="none"/>
+      <circle cx="52" cy="20" r="0.8" fill="#C0392B"/> <!-- Small red bindi -->
+    </g>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#9B7B4B" text-anchor="middle" letter-spacing="1.5">RAJA RAVI VARMA · 1898 CE</text>
+</svg>

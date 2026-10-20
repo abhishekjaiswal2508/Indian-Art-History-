@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="kangraAura" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#F5D061" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="yamunaRiver" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4B89BF"/>
+      <stop offset="100%" stop-color="#235A8E"/>
+    </linearGradient>
+    <linearGradient id="hillGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8BB874"/>
+      <stop offset="100%" stop-color="#3D7344"/>
+    </linearGradient>
+    <filter id="kangraShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="200" r="185" fill="url(#kangraAura)"/>
+
+  <!-- KANGRA FOLIO FRAME -->
+  <g filter="url(#kangraShadow)">
+    <!-- Crimson & Ochre Outer Wasli Margin -->
+    <rect x="45" y="25" width="310" height="330" rx="6" fill="#B33927" stroke="#7A2215" stroke-width="1.5"/>
+    <rect x="53" y="33" width="294" height="314" fill="#FBF7EE" stroke="#E5B242" stroke-width="2"/>
+
+    <!-- PAINTING INTERIOR -->
+    <rect x="65" y="45" width="270" height="290" fill="#FAF3E3"/>
+
+    <!-- Rolling Green Himalayan Hills & Sky -->
+    <!-- Sky with subtle storm cloud / twilight pink -->
+    <path d="M65 45 L335 45 L335 120 C280 110 220 135 150 120 C100 110 80 125 65 120 Z" fill="#DCE9F5"/>
+    <path d="M80 65 Q130 55 180 65 Q230 75 280 65" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+    <!-- Undulating Soft Hills -->
+    <path d="M65 120 C110 100 160 125 210 115 C260 105 300 130 335 115 L335 220 L65 220 Z" fill="url(#hillGreen)"/>
+    <path d="M65 170 C120 160 180 180 240 165 C290 155 315 170 335 165 L335 250 L65 250 Z" fill="#326338"/>
+
+    <!-- YAMUNA RIVER WITH LOTUS BLOSSOMS IN FOREGROUND -->
+    <path d="M65 260 C120 250 200 270 270 255 C305 248 325 255 335 252 L335 335 L65 335 Z" fill="url(#yamunaRiver)"/>
+    <!-- River Ripples -->
+    <path d="M85 285 Q135 280 185 285" stroke="#FAF6EF" stroke-width="1.5" stroke-dasharray="8 6" fill="none" opacity="0.6"/>
+    <path d="M190 305 Q245 300 300 305" stroke="#FAF6EF" stroke-width="1.5" stroke-dasharray="8 6" fill="none" opacity="0.6"/>
+    <!-- Lotus flowers & lily pads -->
+    <g transform="translate(100, 305)">
+      <ellipse cx="0" cy="0" rx="10" ry="4" fill="#2E7D32"/>
+      <path d="M0 -3 C-5 -10 0 -16 5 -10 Z" fill="#FF8BA7"/>
+      <path d="M0 -3 C-8 -8 -4 -16 0 -12 Z" fill="#FFAEC0"/>
+      <path d="M0 -3 C8 -8 4 -16 0 -12 Z" fill="#FFAEC0"/>
+    </g>
+    <g transform="translate(260, 295)">
+      <ellipse cx="0" cy="0" rx="12" ry="5" fill="#2E7D32"/>
+      <path d="M0 -4 C-6 -12 0 -18 6 -12 Z" fill="#FF8BA7"/>
+    </g>
+
+    <!-- FLOWERING KADAMBA TREE (CANOPY SHELTERING THE LOVERS) -->
+    <!-- Tree Trunk -->
+    <path d="M295 260 C290 200 280 150 250 110 C240 95 245 70 245 50" stroke="#5D4037" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M260 135 C230 120 180 115 140 125" stroke="#5D4037" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+    <!-- Lush Foliage Clumps with tiny leaf dots -->
+    <g fill="#25522A" stroke="#1A3B1E" stroke-width="1">
+      <ellipse cx="260" cy="70" rx="35" ry="25"/>
+      <ellipse cx="215" cy="85" rx="32" ry="22"/>
+      <ellipse cx="170" cy="100" rx="30" ry="20"/>
+      <ellipse cx="290" cy="95" rx="28" ry="20"/>
+    </g>
+    <!-- Golden round Kadamba blossoms -->
+    <g fill="#F5B041">
+      <circle cx="240" cy="65" r="4"/><circle cx="210" cy="80" r="4"/>
+      <circle cx="180" cy="95" r="4"/><circle cx="275" cy="85" r="4"/>
+    </g>
+
+    <!-- RADHA AND KRISHNA (THE DIVINE COUPLE) -->
+    <!-- KRISHNA (Sky-blue skin, Yellow Pitambara, Peacock Crown) -->
+    <g transform="translate(160, 160)">
+      <!-- Krishna Body (Lapis / Cloud Blue) -->
+      <path d="M20 30 C20 45 22 70 18 90 L32 90 C34 70 36 45 34 30 Z" fill="#4B89BF"/>
+      <!-- Saffron / Golden Pitambara Dhoti -->
+      <path d="M16 65 C14 85 12 105 15 110 C22 112 36 112 40 108 C38 95 38 75 36 65 Z" fill="#F5D061" stroke="#C68928" stroke-width="1"/>
+      <path d="M22 68 L22 108" stroke="#D49020" stroke-width="1.2"/>
+
+      <!-- Torso & Garland of white jasmine flowers (Vanamala) -->
+      <path d="M22 35 C20 45 20 60 27 65 C34 60 34 45 32 35 Z" fill="#4B89BF"/>
+      <path d="M22 36 C18 52 24 72 27 75 C30 72 36 52 32 36" stroke="#FAF6EF" stroke-width="2.5" stroke-dasharray="2 3" fill="none"/>
+
+      <!-- Arms: Left arm gently around Radha's shoulder -->
+      <path d="M22 38 C10 42 -2 46 -8 48" stroke="#4B89BF" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- Right hand holding flute (Bansuri) -->
+      <line x1="28" y1="46" x2="48" y2="38" stroke="#9C6B14" stroke-width="2"/>
+
+      <!-- Head & Profile -->
+      <circle cx="27" cy="24" r="9" fill="#4B89BF"/>
+      <path d="M27 20 Q33 24 29 30" stroke="#255A8A" stroke-width="1.2" fill="none"/>
+      
+      <!-- Peacock Feather Crown (Mor Mukut) -->
+      <polygon points="22,18 32,18 28,10 24,10" fill="#F5D061" stroke="#9C6B14" stroke-width="1"/>
+      <!-- Peacock eye feather -->
+      <ellipse cx="27" cy="6" rx="5" ry="7" fill="#2E7D32"/>
+      <circle cx="27" cy="6" r="3" fill="#143265"/>
+      <circle cx="27" cy="6" r="1.5" fill="#36D1DC"/>
+    </g>
+
+    <!-- RADHA (Fair skin, Crimson Ghagra-Choli, Gossamer Translucent Odhani) -->
+    <g transform="translate(130, 165)">
+      <!-- Crimson flared Ghagra skirt -->
+      <path d="M8 68 C-2 90 -8 112 0 115 C10 116 28 116 32 112 C28 95 24 78 20 68 Z" fill="#B33927" stroke="#7A2215" stroke-width="1"/>
+      <line x1="0" y1="112" x2="30" y2="112" stroke="#F5D061" stroke-width="2"/>
+
+      <!-- Choli Bodice (Emerald green) -->
+      <path d="M12 40 C10 50 10 65 16 68 C22 65 22 50 20 40 Z" fill="#25522A"/>
+
+      <!-- Head & Graceful Kangra profile looking up at Krishna -->
+      <circle cx="17" cy="26" r="8" fill="#F5DEB3"/>
+      <!-- Characteristic high forehead, sloping nose, almond eye -->
+      <path d="M18 22 L21 26 L18 28" stroke="#8C6544" stroke-width="1" fill="none"/>
+      <ellipse cx="18" cy="24" rx="1.2" ry="1.5" fill="#1F2A44"/>
+      <circle cx="19" cy="27" r="1" fill="#B33927"/> <!-- Bindi -->
+
+      <!-- Translucent gossamer veil (Odhani) floating behind head and draped over arm -->
+      <path d="M10 22 C6 35 4 60 8 85 C14 85 24 60 22 40" fill="#FAF6EF" fill-opacity="0.55" stroke="#E5B242" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#2F6F6B" text-anchor="middle" letter-spacing="1.5">PAHARI / KANGRA · 18th CENTURY</text>
+</svg>

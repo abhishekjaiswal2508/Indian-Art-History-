@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="folkAura" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#C65D3B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="folkShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="200" r="185" fill="url(#folkAura)"/>
+
+  <!-- FOLK CANVAS (EARTHEN TERRACOTTA WALL GROUND) -->
+  <g filter="url(#folkShadow)">
+    <rect x="45" y="30" width="310" height="325" rx="8" fill="#B35436" stroke="#87361D" stroke-width="2"/>
+    
+    <!-- Madhubani Double Line Border with Hatching -->
+    <rect x="55" y="40" width="290" height="305" rx="4" fill="none" stroke="#FAF6EF" stroke-width="2"/>
+    <rect x="61" y="46" width="278" height="293" rx="2" fill="none" stroke="#FAF6EF" stroke-width="1"/>
+    <!-- Triangular zig-zag border pattern -->
+    <path d="M62 46 L70 54 L78 46 L86 54 L94 46 L102 54 L110 46 L118 54 L126 46 L134 54 L142 46 L150 54 L158 46 L166 54 L174 46 L182 54 L190 46 L198 54 L206 46 L214 54 L222 46 L230 54 L238 46 L246 54 L254 46 L262 54 L270 46 L278 54 L286 46 L294 54 L302 46 L310 54 L318 46 L326 54 L334 46" stroke="#FAF6EF" stroke-width="1" fill="none"/>
+
+    <!-- MADHUBANI SACRED TREE OF LIFE & PEACOCK (TOP HALF) -->
+    <!-- Tree Trunk & Sinuous Branches -->
+    <path d="M200 170 L200 95 C190 75 160 70 140 85 M200 115 C215 90 245 80 260 95 M200 135 C180 125 155 130 145 145 M200 135 C220 125 245 130 255 145" 
+          stroke="#FAF6EF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    
+    <!-- Stylized Madhubani Leaves & Buds with Hatching -->
+    <g fill="#FAF6EF">
+      <ellipse cx="140" cy="85" rx="10" ry="5" transform="rotate(-30 140 85)"/>
+      <ellipse cx="260" cy="95" rx="10" ry="5" transform="rotate(30 260 95)"/>
+      <ellipse cx="145" cy="145" rx="9" ry="4" transform="rotate(-15 145 145)"/>
+      <ellipse cx="255" cy="145" rx="9" ry="4" transform="rotate(15 255 145)"/>
+      <ellipse cx="200" cy="75" rx="6" ry="12"/>
+      <circle cx="200" cy="60" r="4" fill="#F39C12"/>
+    </g>
+
+    <!-- Madhubani Royal Peacock on Tree Branch -->
+    <g transform="translate(160, 80)">
+      <path d="M10 20 C15 10 25 10 30 18 C28 28 18 30 10 20 Z" fill="#2980B9" stroke="#FAF6EF" stroke-width="1.2"/>
+      <!-- Sinuous neck and crown crest -->
+      <path d="M10 20 C8 15 12 12 14 8" stroke="#FAF6EF" stroke-width="1.5" fill="none"/>
+      <circle cx="14" cy="7" r="1.5" fill="#FAF6EF"/>
+      <!-- Elongated decorative tail feathers with eyes -->
+      <path d="M28 24 C38 28 48 25 55 35" stroke="#FAF6EF" stroke-width="2" fill="none"/>
+      <circle cx="55" cy="35" r="3" fill="#F1C40F"/>
+    </g>
+
+    <!-- Twin Sacred Fish (Matsya - Fertility and Auspiciousness in Madhubani) -->
+    <g transform="translate(90, 115) rotate(25)">
+      <path d="M0 0 C10 -6 22 -4 30 0 C22 4 10 6 0 0 Z" fill="#F5B041" stroke="#FAF6EF" stroke-width="1.2"/>
+      <polygon points="30,0 36,-5 36,5" fill="#FAF6EF"/>
+      <circle cx="6" cy="0" r="1" fill="#87361D"/>
+      <!-- Scale hatching -->
+      <line x1="12" y1="-3" x2="12" y2="3" stroke="#FAF6EF" stroke-width="1"/>
+      <line x1="18" y1="-4" x2="18" y2="4" stroke="#FAF6EF" stroke-width="1"/>
+      <line x1="24" y1="-3" x2="24" y2="3" stroke="#FAF6EF" stroke-width="1"/>
+    </g>
+    <g transform="translate(300, 125) rotate(-25) scale(-1, 1)">
+      <path d="M0 0 C10 -6 22 -4 30 0 C22 4 10 6 0 0 Z" fill="#F5B041" stroke="#FAF6EF" stroke-width="1.2"/>
+      <polygon points="30,0 36,-5 36,5" fill="#FAF6EF"/>
+      <circle cx="6" cy="0" r="1" fill="#87361D"/>
+    </g>
+
+    <!-- WARLI SPIRAL TARPA CIRCLE DANCE (LOWER HALF) -->
+    <!-- The central Tarpa player (musician blowing long wind instrument) -->
+    <g transform="translate(200, 240)">
+      <!-- Tarpa instrument -->
+      <path d="M-6 0 C-10 -15 -18 -25 -25 -35" stroke="#FAF6EF" stroke-width="3" fill="none"/>
+      <!-- Musician (Opposing triangles motif) -->
+      <circle cx="0" cy="-10" r="3.5" fill="#FAF6EF"/>
+      <polygon points="-5,-6 5,-6 0,0" fill="#FAF6EF"/>
+      <polygon points="0,0 -6,8 6,8" fill="#FAF6EF"/>
+      <line x1="-3" y1="8" x2="-5" y2="16" stroke="#FAF6EF" stroke-width="1.5"/>
+      <line x1="3" y1="8" x2="5" y2="16" stroke="#FAF6EF" stroke-width="1.5"/>
+    </g>
+
+    <!-- Circular spiral chain of linked Warli dancers holding hands -->
+    <!-- Inner Ring of 6 Dancers -->
+    <g transform="translate(200, 240)">
+      <!-- 6 Dancers at r = 40 -->
+      <!-- 0 deg -->
+      <g transform="translate(38, 0)">
+        <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+        <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+        <line x1="-2" y1="6" x2="-3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/><line x1="2" y1="6" x2="3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/>
+      </g>
+      <!-- 60 deg -->
+      <g transform="rotate(60) translate(38, 0)">
+        <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+        <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+        <line x1="-2" y1="6" x2="-3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/><line x1="2" y1="6" x2="3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/>
+      </g>
+      <!-- 120 deg -->
+      <g transform="rotate(120) translate(38, 0)">
+        <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+        <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+        <line x1="-2" y1="6" x2="-3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/><line x1="2" y1="6" x2="3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/>
+      </g>
+      <!-- 180 deg -->
+      <g transform="rotate(180) translate(38, 0)">
+        <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+        <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+        <line x1="-2" y1="6" x2="-3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/><line x1="2" y1="6" x2="3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/>
+      </g>
+      <!-- 240 deg -->
+      <g transform="rotate(240) translate(38, 0)">
+        <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+        <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+        <line x1="-2" y1="6" x2="-3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/><line x1="2" y1="6" x2="3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/>
+      </g>
+      <!-- 300 deg -->
+      <g transform="rotate(300) translate(38, 0)">
+        <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+        <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+        <line x1="-2" y1="6" x2="-3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/><line x1="2" y1="6" x2="3" y2="12" stroke="#FAF6EF" stroke-width="1.5"/>
+      </g>
+
+      <!-- Linked arms connecting dancers -->
+      <circle cx="0" cy="0" r="38" stroke="#FAF6EF" stroke-width="1" stroke-dasharray="4 6" fill="none"/>
+      <!-- Outer spiral connecting thread -->
+      <circle cx="0" cy="0" r="65" stroke="#FAF6EF" stroke-width="1" stroke-dasharray="3 5" fill="none" opacity="0.6"/>
+    </g>
+
+    <!-- Outer Warli dancers along the lower rim -->
+    <g transform="translate(100, 290)">
+      <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+      <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+      <line x1="-2" y1="6" x2="-4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+      <line x1="2" y1="6" x2="4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(125, 298)">
+      <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+      <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+      <line x1="-2" y1="6" x2="-4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+      <line x1="2" y1="6" x2="4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(275, 298)">
+      <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+      <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+      <line x1="-2" y1="6" x2="-4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+      <line x1="2" y1="6" x2="4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(300, 290)">
+      <circle cx="0" cy="-7" r="3" fill="#FAF6EF"/>
+      <polygon points="-4,-4 4,-4 0,0" fill="#FAF6EF"/><polygon points="0,0 -4,6 4,6" fill="#FAF6EF"/>
+      <line x1="-2" y1="6" x2="-4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+      <line x1="2" y1="6" x2="4" y2="14" stroke="#FAF6EF" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#FAF6EF" text-anchor="middle" letter-spacing="1.5">LIVING INDIGENOUS TRADITIONS</text>
+</svg>

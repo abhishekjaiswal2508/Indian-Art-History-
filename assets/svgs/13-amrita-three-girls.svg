@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="amritaAura" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#E74C3C" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shergilShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="200" r="185" fill="url(#amritaAura)"/>
+
+  <!-- MODERNIST CANVAS FRAME -->
+  <g filter="url(#shergilShadow)">
+    <rect x="45" y="30" width="310" height="325" rx="4" fill="#2C3E50" stroke="#1A252F" stroke-width="2"/>
+    <rect x="52" y="37" width="296" height="311" fill="#EAECEE"/>
+
+    <!-- Neutral earthy background (Sher-Gil modernist muted backdrop) -->
+    <rect x="60" y="45" width="280" height="295" fill="#D5D8DC"/>
+    <path d="M60 220 L340 220 L340 340 L60 340 Z" fill="#ABB2B9"/>
+
+    <!-- THREE SEATED GIRLS (BOLD COLOR PLANES) -->
+
+    <!-- GIRL 1 (LEFT): Seated in Radiant Vermilion Red Dupatta/Kurta -->
+    <g transform="translate(80, 105)">
+      <!-- Body & Red Drapery -->
+      <path d="M5 95 C-5 130 -8 180 2 205 L65 205 C70 180 65 130 55 95 Z" fill="#C0392B"/>
+      <!-- Brown arms resting in lap -->
+      <path d="M12 110 C8 140 18 165 32 170 C42 165 50 140 45 110" stroke="#784212" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <ellipse cx="32" cy="172" rx="8" ry="5" fill="#784212"/>
+
+      <!-- Red veil covering head -->
+      <path d="M12 25 C10 5 45 5 46 25 C48 55 52 95 50 105 L8 105 C6 95 10 55 12 25 Z" fill="#922B21"/>
+
+      <!-- Face (Earthy dusky complexion, poignant melancholic gaze) -->
+      <ellipse cx="28" cy="40" rx="11" ry="14" fill="#873600"/>
+      <!-- Large almond contemplative eyes -->
+      <ellipse cx="23" cy="38" rx="2.5" ry="1.8" fill="#17202A"/>
+      <ellipse cx="33" cy="38" rx="2.5" ry="1.8" fill="#17202A"/>
+      <path d="M28 40 L28 48 L31 49" stroke="#562306" stroke-width="1.2" fill="none"/>
+      <path d="M26 53 Q28 55 31 53" stroke="#641E16" stroke-width="1.5" fill="none"/>
+    </g>
+
+    <!-- GIRL 2 (CENTER): Dressed in Luminous Golden Ochre Saree/Kurta -->
+    <g transform="translate(165, 95)">
+      <!-- Saffron / Ochre Garment -->
+      <path d="M5 105 C-5 140 -6 190 2 215 L68 215 C75 190 70 140 60 105 Z" fill="#F39C12"/>
+      <!-- Dusky Arms in lap -->
+      <path d="M14 120 C10 150 20 175 35 180 C48 175 56 150 50 120" stroke="#6E2C00" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="35" cy="182" rx="9" ry="5.5" fill="#6E2C00"/>
+
+      <!-- Golden Ochre Dupatta over head -->
+      <path d="M14 22 C12 2 52 2 54 22 C56 55 60 105 58 115 L10 115 C8 105 12 55 14 22 Z" fill="#D68910"/>
+
+      <!-- Face (Solemn, timeless, quiet dignity) -->
+      <ellipse cx="34" cy="38" rx="12" ry="15" fill="#7E3D0A"/>
+      <ellipse cx="28" cy="36" rx="2.8" ry="2" fill="#17202A"/>
+      <ellipse cx="40" cy="36" rx="2.8" ry="2" fill="#17202A"/>
+      <path d="M34 38 L34 47 L37 48" stroke="#4D2305" stroke-width="1.2" fill="none"/>
+      <path d="M31 53 Q34 55 37 53" stroke="#561E06" stroke-width="1.5" fill="none"/>
+    </g>
+
+    <!-- GIRL 3 (RIGHT): Dressed in Deep Muted Emerald Teal / Olive Green -->
+    <g transform="translate(250, 110)">
+      <!-- Green / Teal Garment -->
+      <path d="M5 90 C-5 125 -6 175 2 200 L65 200 C70 175 66 125 56 90 Z" fill="#196F3D"/>
+      <!-- Brown Arms -->
+      <path d="M12 105 C8 135 18 160 32 165 C44 160 52 135 46 105" stroke="#784212" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <ellipse cx="32" cy="167" rx="8" ry="5" fill="#784212"/>
+
+      <!-- Deep green dupatta over head -->
+      <path d="M12 25 C10 5 46 5 48 25 C50 55 54 90 52 100 L10 100 C8 90 10 55 12 25 Z" fill="#114B29"/>
+
+      <!-- Face -->
+      <ellipse cx="30" cy="40" rx="11" ry="14" fill="#873600"/>
+      <ellipse cx="25" cy="38" rx="2.5" ry="1.8" fill="#17202A"/>
+      <ellipse cx="35" cy="38" rx="2.5" ry="1.8" fill="#17202A"/>
+      <path d="M30 40 L30 48 L33 49" stroke="#562306" stroke-width="1.2" fill="none"/>
+      <path d="M28 53 Q30 55 33 53" stroke="#641E16" stroke-width="1.5" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#C0392B" text-anchor="middle" letter-spacing="1.5">AMRITA SHER-GIL · 1935 CE</text>
+</svg>

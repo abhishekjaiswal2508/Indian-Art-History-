@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kala Yatra: A Timeline of Indian Art History</title>
+  <meta name="description" content="An interactive digital timeline celebrating 5,000 years of Indian art, architecture, and visual culture with virtual replicas and historical deep dives.">
+  <meta name="theme-color" content="#FAF6EF">
+
+  <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon / Vector Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23C65D3B'/><circle cx='50' cy='50' r='20' fill='%23E0A23A'/></svg>">
+</head>
+<body>
+
+  <!-- Floating Ambient Mandalas Background -->
+  <div class="bg-ambient-layer" aria-hidden="true">
+    <div class="mandala-float mandala-1"></div>
+    <div class="mandala-float mandala-2"></div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        Interactive Digital Exhibition · University Fine Arts
+      </div>
+
+      <!-- Group Contributors Badge -->
+      <div class="hero-team-badge">
+        <span class="hero-team-label">Created by Group 4:</span>
+        <span class="hero-team-member"><strong>Priyanshu Kumar</strong> <code>RA2411003010752</code></span>
+        <span class="hero-team-sep">&bull;</span>
+        <span class="hero-team-member"><strong>Muskan Kumari</strong> <code>RA2411003010756</code></span>
+        <span class="hero-team-sep">&bull;</span>
+        <span class="hero-team-member"><strong>Abhishek Jaiswal</strong> <code>RA2411003010764</code></span>
+        <span class="hero-team-sep">&bull;</span>
+        <span class="hero-team-member"><strong>Prakhar Pandey</strong> <code>RA2411003010736</code></span>
+      </div>
+
+      <h1 class="hero-title">
+        Kala Yatra<br>
+        <span>A Timeline of Indian Art</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Embark on a chronological odyssey through 5,000 years of visual imagination—from the bronze forges of Mohenjo-daro to the modernist canvases of independent India.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#timeline" class="btn-primary" id="startJourneyBtn">
+          <span>Start the Journey</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </a>
+
+        <!-- Synthesized Web Audio Ambiance Drone (No external files needed) -->
+        <button class="btn-sound-toggle" id="audioToggleBtn" title="Toggle calming Indian acoustic drone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span id="audioBtnText">Sound Ambiance</span>
+        </button>
+      </div>
+
+      <!-- Quick Stats Counter -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">5,000+</span>
+          <span class="stat-label">Years of History</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">14</span>
+          <span class="stat-label">Key Artifacts</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">6</span>
+          <span class="stat-label">Major Epochs</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Vector Replicas</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STICKY NAVIGATION BAR & ERA CONTROLS -->
+  <nav class="sticky-bar-wrapper" id="stickyNav" aria-label="Timeline navigation and filters">
+    <div class="sticky-bar-container">
+      <div class="sticky-bar-top">
+        <div class="nav-brand">
+          <div class="nav-brand-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/>
+            </svg>
+          </div>
+          <span>Kala Yatra</span>
+        </div>
+
+        <!-- Real-time Artifact Filter / Search -->
+        <div class="search-wrapper">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search artwork, period, material..." aria-label="Search artifacts">
+        </div>
+
+        <!-- Controls: View Mode & Scroll controls -->
+        <div class="controls-group">
+          <a href="#team" class="btn-view-toggle" id="teamNavBtn" title="Jump to Team Members">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Team (4)</span>
+          </a>
+          <button class="btn-view-toggle" id="viewModeToggle" title="Toggle between Horizontal Pan and Vertical Story layout">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            <span id="viewModeText">Vertical View</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Era Filter Chips -->
+      <div class="era-filters-track" id="eraFilterTrack" role="tablist">
+        <button class="filter-chip is-active" data-era="all" role="tab" aria-selected="true">
+          <span class="chip-dot" style="background-color: var(--brand-indigo);"></span>
+          All Epochs (14)
+        </button>
+        <button class="filter-chip" data-era="Ancient" role="tab" aria-selected="false">
+          <span class="chip-dot" style="background-color: var(--era-ancient);"></span>
+          Ancient (3000–500 BCE)
+        </button>
+        <button class="filter-chip" data-era="Classical" role="tab" aria-selected="false">
+          <span class="chip-dot" style="background-color: var(--era-classical);"></span>
+          Classical (500 BCE–600 CE)
+        </button>
+        <button class="filter-chip" data-era="Medieval" role="tab" aria-selected="false">
+          <span class="chip-dot" style="background-color: var(--era-medieval);"></span>
+          Medieval (600–1300 CE)
+        </button>
+        <button class="filter-chip" data-era="Mughal & Regional" role="tab" aria-selected="false">
+          <span class="chip-dot" style="background-color: var(--era-mughal);"></span>
+          Mughal & Regional (1500–1800)
+        </button>
+        <button class="filter-chip" data-era="Colonial" role="tab" aria-selected="false">
+          <span class="chip-dot" style="background-color: var(--era-colonial);"></span>
+          Colonial (1800–1900)
+        </button>
+        <button class="filter-chip" data-era="Modern" role="tab" aria-selected="false">
+          <span class="chip-dot" style="background-color: var(--era-modern);"></span>
+          Modern (1900–1950)
+        </button>
+        <button class="filter-chip" data-era="Living Traditions" role="tab" aria-selected="false">
+          <span class="chip-dot" style="background-color: var(--era-folk);"></span>
+          Living Traditions
+        </button>
+      </div>
+
+      <!-- Overall Timeline Progress Meter -->
+      <div class="timeline-meter-bar" title="Timeline progress (3000 BCE to Present)">
+        <div class="timeline-meter-fill" id="timelineMeterFill"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- First-time hint banner (Fades after first click/scroll) -->
+  <div class="hint-banner" id="userHintBanner">
+    <span>💡 <strong>Interactive Hint:</strong> Click any card to inspect high-resolution vector replicas and historical context. On desktop, drag or use arrow keys (← / →) to scroll through history.</span>
+    <button id="dismissHintBtn" aria-label="Dismiss hint">&times;</button>
+  </div>
+
+  <!-- MAIN TIMELINE SECTION -->
+  <main class="timeline-section" id="timeline">
+    <!-- Desktop Floating Navigation Arrow Buttons -->
+    <button class="timeline-nav-btn prev" id="timelineScrollLeft" aria-label="Scroll backward in time">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="timeline-nav-btn next" id="timelineScrollRight" aria-label="Scroll forward in time">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- 1. DESKTOP HORIZONTAL TIMELINE -->
+    <div class="timeline-horizontal-container" id="horizontalScrollContainer">
+      <div class="timeline-track" id="horizontalTimelineTrack">
+        <!-- Central Line -->
+        <div class="timeline-center-line"></div>
+        <!-- Injected via main.js from ART_DATA -->
+      </div>
+    </div>
+
+    <!-- 2. MOBILE / RESPONSIVE VERTICAL TIMELINE -->
+    <div class="timeline-vertical-container" id="verticalTimelineContainer">
+      <div class="timeline-vertical-line"></div>
+      <div id="verticalTimelineTrack">
+        <!-- Injected via main.js from ART_DATA -->
+      </div>
+    </div>
+  </main>
+
+  <!-- EDUCATIONAL ERA OVERVIEW SECTION -->
+  <section class="era-guide-section" id="eraGuide">
+    <div class="section-header-centered">
+      <h2 class="section-title">The Epochs of Indian Art</h2>
+      <p class="section-subtitle">
+        Understand how socio-political transformations, philosophical inquiries, and global cultural exchanges shaped five millennia of artistic creation.
+      </p>
+    </div>
+
+    <div class="era-cards-grid">
+      <!-- Ancient -->
+      <article class="era-summary-card" style="border-top-color: var(--era-ancient);">
+        <span class="era-card-dates">3000 BCE – 500 BCE</span>
+        <h3 class="era-card-title">Ancient & Harappan</h3>
+        <p class="era-card-text">
+          Pioneered advanced urban planning, bronze lost-wax casting, terracotta fertility icons, and steatite seals. The Indus Valley Civilization demonstrated unprecedented technological finesse in metallurgy and ceramic art.
+        </p>
+      </article>
+
+      <!-- Classical -->
+      <article class="era-summary-card" style="border-top-color: var(--era-classical);">
+        <span class="era-card-dates">500 BCE – 600 CE</span>
+        <h3 class="era-card-title">Classical Golden Age</h3>
+        <p class="era-card-text">
+          Spanning the Mauryan, Satavahana, and Gupta empires. Marked by monumental polished stone pillars, Sanchi's narrative relief gateways, the sublime spiritual frescoes of Ajanta, and idealized Gupta sculpture.
+        </p>
+      </article>
+
+      <!-- Medieval -->
+      <article class="era-summary-card" style="border-top-color: var(--era-medieval);">
+        <span class="era-card-dates">600 CE – 1300 CE</span>
+        <h3 class="era-card-title">Medieval Temple Dynasties</h3>
+        <p class="era-card-text">
+          A period of extraordinary architectural courage: the monolithic top-down excavation of Ellora's Kailasa temple, Chola master bronzes (Nataraja), and the giant astronomical stone chariot wheels of Konark.
+        </p>
+      </article>
+
+      <!-- Mughal & Regional -->
+      <article class="era-summary-card" style="border-top-color: var(--era-mughal);">
+        <span class="era-card-dates">1500 CE – 1800 CE</span>
+        <h3 class="era-card-title">Mughal & Regional Painting</h3>
+        <p class="era-card-text">
+          Synthesis of Persian, Indian, and European traditions in imperial kitabkhanas. Gave birth to exquisite court miniatures and lyrical Pahari (Kangra) paintings celebrating devotional Vaishnava romance.
+        </p>
+      </article>
+
+      <!-- Colonial & Transition -->
+      <article class="era-summary-card" style="border-top-color: var(--era-colonial);">
+        <span class="era-card-dates">1800 CE – 1900 CE</span>
+        <h3 class="era-card-title">Colonial Realism & Print</h3>
+        <p class="era-card-text">
+          Raja Ravi Varma fused Western oil-on-canvas realism with Indian mythic themes, using chromolithography to democratize sacred imagery and establish visual standards for modern Indian iconography.
+        </p>
+      </article>
+
+      <!-- Modern & Living -->
+      <article class="era-summary-card" style="border-top-color: var(--era-modern);">
+        <span class="era-card-dates">1900 CE – Present</span>
+        <h3 class="era-card-title">Modern & Living Traditions</h3>
+        <p class="era-card-text">
+          The Swadeshi Bengal School (Abanindranath Tagore), avant-garde modernism (Amrita Sher-Gil), and indigenous folk rituals (Madhubani, Warli) that remain continuous, living community art practices.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- DEDICATED PROJECT CREATORS / TEAM SECTION -->
+  <section class="team-section" id="team">
+    <div class="section-header-centered">
+      <div class="hero-pill" style="margin-bottom: 14px;">
+        <span class="hero-pill-dot"></span>
+        Academic Project Creators · Group 4
+      </div>
+      <h2 class="section-title">Who Made This Project</h2>
+      <p class="section-subtitle">
+        Curated, designed, and developed as an interactive course assignment for the University Fine Arts & Visual Culture program.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Member 1 -->
+      <div class="team-card">
+        <div class="team-avatar">PK</div>
+        <div class="team-card-body">
+          <h3 class="team-name">Priyanshu Kumar</h3>
+          <div class="team-reg-badge">
+            <span class="reg-label">REG NO:</span>
+            <span class="reg-value">RA2411003010752</span>
+          </div>
+          <p class="team-role">Historical Curation, Epoch Research & Syllabus Alignment</p>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-card">
+        <div class="team-avatar">MK</div>
+        <div class="team-card-body">
+          <h3 class="team-name">Muskan Kumari</h3>
+          <div class="team-reg-badge">
+            <span class="reg-label">REG NO:</span>
+            <span class="reg-value">RA2411003010756</span>
+          </div>
+          <p class="team-role">Art History Analysis, Context Documentation & Fact Verification</p>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-card">
+        <div class="team-avatar">AJ</div>
+        <div class="team-card-body">
+          <h3 class="team-name">Abhishek Jaiswal</h3>
+          <div class="team-reg-badge">
+            <span class="reg-label">REG NO:</span>
+            <span class="reg-value">RA2411003010764</span>
+          </div>
+          <p class="team-role">Front-End Architecture, UI/UX Design System & Web Audio Drone</p>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-card">
+        <div class="team-avatar">PP</div>
+        <div class="team-card-body">
+          <h3 class="team-name">Prakhar Pandey</h3>
+          <div class="team-reg-badge">
+            <span class="reg-label">REG NO:</span>
+            <span class="reg-value">RA2411003010736</span>
+          </div>
+          <p class="team-role">Vector Replicas (SVGs), Responsive Timelines & Accessibility</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIFACT DEEP DIVE MODAL -->
+  <div class="modal-backdrop" id="artifactModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Left Column: Visual Showcase -->
+      <div class="modal-visual-column">
+        <div class="modal-visual-frame" id="modalVisualContainer">
+          <!-- Injected SVG or Image -->
+        </div>
+
+        <!-- Replica Type Switcher -->
+        <div class="replica-toggle-box">
+          <button class="replica-toggle-btn is-active" id="btnShowVector">Stylized Vector Replica</button>
+          <button class="replica-toggle-btn" id="btnShowPhoto">Archival Photograph</button>
+        </div>
+
+        <div class="modal-credit" id="modalCreditText">
+          Stylized vector replica
+        </div>
+      </div>
+
+      <!-- Right Column: Narrative & Educational Context -->
+      <div class="modal-narrative-column">
+        <div class="modal-header-meta">
+          <span class="modal-era-badge" id="modalEraBadge">Ancient</span>
+          <span class="modal-date-label" id="modalDateLabel">c. 2500 BCE</span>
+        </div>
+
+        <h2 class="modal-title" id="modalTitle">Dancing Girl of Mohenjo-daro</h2>
+
+        <!-- Quick Facts Matrix -->
+        <div class="modal-facts-grid">
+          <div>
+            <div class="fact-box-label">Period / Dynasty</div>
+            <div class="fact-box-value" id="modalPeriodVal">Indus Valley Civilization</div>
+          </div>
+          <div>
+            <div class="fact-box-label">Origin / Region</div>
+            <div class="fact-box-value" id="modalRegionVal">Mohenjo-daro, Sindh</div>
+          </div>
+          <div>
+            <div class="fact-box-label">Medium & Material</div>
+            <div class="fact-box-value" id="modalMediumVal">Lost-wax cast bronze</div>
+          </div>
+          <div>
+            <div class="fact-box-label">Culture / Artist</div>
+            <div class="fact-box-value" id="modalCultureVal">Harappan Metallurgists</div>
+          </div>
+        </div>
+
+        <!-- Full Educational Narrative -->
+        <div class="modal-story" id="modalFullStory">
+          <!-- Injected paragraphs -->
+        </div>
+
+        <!-- Why It Matters -->
+        <div class="callout-box">
+          <div class="callout-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Why It Matters
+          </div>
+          <div class="callout-text" id="modalWhyItMatters">
+            It represents the earliest known bronze sculpture in Indian history.
+          </div>
+        </div>
+
+        <!-- Did You Know? Fun Fact -->
+        <div class="fun-fact-box">
+          <div class="fun-fact-icon">✨</div>
+          <div class="fun-fact-text" id="modalFunFact">
+            Archaeologists were amazed by her casual, self-assured stance!
+          </div>
+        </div>
+
+        <!-- Modal Footer Navigation (Previous / Next) -->
+        <div class="modal-nav-footer">
+          <button class="btn-modal-nav" id="btnPrevArtifact">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Previous</span>
+          </button>
+
+          <span id="modalCounterText" style="font-size: 0.85rem; font-weight: 600; color: var(--text-tertiary);">
+            1 / 14
+          </span>
+
+          <button class="btn-modal-nav" id="btnNextArtifact">
+            <span>Next</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Kala Yatra: Indian Art Timeline</h3>
+        <p>
+          A university digital humanities and art history submission. Designed to make Indian cultural heritage, sculpture, and painting accessible, interactive, and visually inspiring for learners worldwide.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Course & Project Group</h4>
+        <ul class="footer-list">
+          <li><strong>Course:</strong> History of Indian Art & Visual Culture</li>
+          <li><strong>Project Team:</strong> Group 4</li>
+          <li><strong>Priyanshu Kumar:</strong> RA2411003010752</li>
+          <li><strong>Muskan Kumari:</strong> RA2411003010756</li>
+          <li><strong>Abhishek Jaiswal:</strong> RA2411003010764</li>
+          <li><strong>Prakhar Pandey:</strong> RA2411003010736</li>
+          <li><strong>Status:</strong> Complete & Fully Responsive</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Sources & Credits</h4>
+        <ul class="footer-list">
+          <li>National Museum, New Delhi</li>
+          <li>Archaeological Survey of India (ASI)</li>
+          <li>UNESCO World Heritage Centre</li>
+          <li>Wikimedia Commons (Public Domain)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        Created for academic presentation · Built with HTML5, CSS3, & Vanilla JavaScript.
+      </div>
+      <div>
+        Replicas: Stylized SVG Vectors &middot; Zero Framework Dependencies
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP CDN for optional ultra-smooth scrolling (with graceful vanilla fallback) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Project Scripts: data.js (Content) then main.js (App Logic) -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

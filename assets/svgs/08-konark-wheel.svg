@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="sunGlow8" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0A23A" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#C65D3B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="khondalite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CA7F4E"/>
+      <stop offset="50%" stop-color="#9C552A"/>
+      <stop offset="100%" stop-color="#5E2C11"/>
+    </linearGradient>
+    <filter id="wheelShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="200" r="185" fill="url(#sunGlow8)"/>
+
+  <!-- Plinth of the Sun Chariot -->
+  <rect x="50" y="340" width="300" height="20" rx="3" fill="#5E2C11"/>
+  <line x1="55" y1="345" x2="345" y2="345" stroke="#E0A23A" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- THE GREAT KONARK WHEEL -->
+  <g filter="url(#wheelShadow)">
+    <!-- OUTER RIM (FELLOE) -->
+    <circle cx="200" cy="190" r="140" fill="#CA7F4E" stroke="#5E2C11" stroke-width="3"/>
+    <circle cx="200" cy="190" r="126" fill="#9C552A" stroke="#5E2C11" stroke-width="2"/>
+    <circle cx="200" cy="190" r="114" fill="#FAF6EF" stroke="#5E2C11" stroke-width="2.5"/>
+
+    <!-- Carved bead and medallion patterns on outer rim -->
+    <circle cx="200" cy="190" r="133" stroke="#FAF6EF" stroke-width="3" stroke-dasharray="3 7"/>
+    <circle cx="200" cy="190" r="120" stroke="#5E2C11" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+    <!-- CENTRAL HUB (AXLE) -->
+    <g transform="translate(200, 190)">
+      <!-- Outer hub casing -->
+      <circle cx="0" cy="0" r="42" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="2.5"/>
+      <!-- Petal ring on hub -->
+      <circle cx="0" cy="0" r="32" fill="#CA7F4E" stroke="#5E2C11" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="28" stroke="#FAF6EF" stroke-width="1.5" stroke-dasharray="2 4"/>
+      <!-- Center Axle boss with carved dancing maiden silhouette -->
+      <circle cx="0" cy="0" r="18" fill="#5E2C11"/>
+      <circle cx="0" cy="0" r="12" fill="#E0A23A"/>
+      <circle cx="0" cy="0" r="5" fill="#5E2C11"/>
+    </g>
+
+    <!-- 8 MAJOR CARVED SPOKES (With circular narrative medallions) -->
+    <g transform="translate(200, 190)">
+      <!-- Loop for 8 major spokes: 0, 45, 90, 135, 180, 225, 270, 315 deg -->
+      <!-- We will create 8 major spokes rotated around center -->
+      <!-- Spoke 1: 0 deg (Top) -->
+      <g>
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- Spoke 2: 90 deg (Right) -->
+      <g transform="rotate(90)">
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- Spoke 3: 180 deg (Bottom) -->
+      <g transform="rotate(180)">
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- Spoke 4: 270 deg (Left) -->
+      <g transform="rotate(270)">
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- Diagonal Spoke 5: 45 deg -->
+      <g transform="rotate(45)">
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- Diagonal Spoke 6: 135 deg -->
+      <g transform="rotate(135)">
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- Diagonal Spoke 7: 225 deg -->
+      <g transform="rotate(225)">
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- Diagonal Spoke 8: 315 deg -->
+      <g transform="rotate(315)">
+        <path d="M-9 -42 L-11 -114 L11 -114 L9 -42 Z" fill="url(#khondalite)" stroke="#5E2C11" stroke-width="1.5"/>
+        <circle cx="0" cy="-78" r="12" fill="#CA7F4E" stroke="#5E2C11" stroke-width="2"/>
+        <circle cx="0" cy="-78" r="7" fill="#FAF6EF" opacity="0.8"/>
+        <circle cx="0" cy="-78" r="3" fill="#5E2C11"/>
+      </g>
+
+      <!-- 8 MINOR SPOKES (Slender decorative ribs between the 8 major spokes: 22.5, 67.5, 112.5, 157.5, 202.5, 247.5, 292.5, 337.5 deg) -->
+      <g stroke="#5E2C11" stroke-width="2" fill="#9C552A">
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(22.5)"/>
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(67.5)"/>
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(112.5)"/>
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(157.5)"/>
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(202.5)"/>
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(247.5)"/>
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(292.5)"/>
+        <line x1="0" y1="-42" x2="0" y2="-114" transform="rotate(337.5)"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#C65D3B" text-anchor="middle" letter-spacing="1.5">EASTERN GANGA · 13th CENTURY CE</text>
+</svg>

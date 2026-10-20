@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="basaltAura" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#E8DEC8" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#FAF6EF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="basaltStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#707685"/>
+      <stop offset="50%" stop-color="#474C59"/>
+      <stop offset="100%" stop-color="#282B33"/>
+    </linearGradient>
+    <linearGradient id="cliffRock" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8F8B83"/>
+      <stop offset="100%" stop-color="#423F3A"/>
+    </linearGradient>
+    <filter id="templeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="200" r="185" fill="url(#basaltAura)"/>
+
+  <!-- EXCAVATED CLIFF WALLS (Top-down carve cutaway) -->
+  <g opacity="0.35">
+    <!-- Left cliff cutting -->
+    <path d="M20 40 L65 70 L55 180 L75 280 L40 360 L20 360 Z" fill="url(#cliffRock)"/>
+    <!-- Right cliff cutting -->
+    <path d="M380 40 L335 70 L345 180 L325 280 L360 360 L380 360 Z" fill="url(#cliffRock)"/>
+    <!-- Horizontal chisel marks on cliff face -->
+    <line x1="25" y1="100" x2="60" y2="100" stroke="#1F2A44" stroke-width="1.5"/>
+    <line x1="35" y1="180" x2="65" y2="180" stroke="#1F2A44" stroke-width="1.5"/>
+    <line x1="335" y1="120" x2="370" y2="120" stroke="#1F2A44" stroke-width="1.5"/>
+    <line x1="330" y1="210" x2="365" y2="210" stroke="#1F2A44" stroke-width="1.5"/>
+  </g>
+
+  <!-- MONOLITHIC KAILASA TEMPLE COMPLEX -->
+  <g filter="url(#templeShadow)">
+    <!-- Base Courtyard Plinth -->
+    <rect x="70" y="325" width="260" height="28" rx="2" fill="#282B33"/>
+    
+    <!-- ELEPHANT & LION FRIEZE AT FOUNDATION (Holding Mount Kailash) -->
+    <g fill="#474C59" stroke="#1F2A44" stroke-width="1.2">
+      <!-- Elephant 1 -->
+      <path d="M85 325 C85 305 98 300 110 300 L115 325 Z"/>
+      <path d="M88 308 Q82 316 88 322" stroke="#FAF6EF" stroke-width="1.5" fill="none"/>
+      <!-- Elephant 2 -->
+      <path d="M125 325 C125 305 138 300 150 300 L155 325 Z"/>
+      <path d="M128 308 Q122 316 128 322" stroke="#FAF6EF" stroke-width="1.5" fill="none"/>
+      <!-- Elephant 3 (Center) -->
+      <path d="M190 325 C190 302 205 298 220 298 L225 325 Z"/>
+      <path d="M194 308 Q188 316 194 322" stroke="#FAF6EF" stroke-width="1.5" fill="none"/>
+      <!-- Elephant 4 -->
+      <path d="M260 325 C260 305 273 300 285 300 L290 325 Z"/>
+      <path d="M263 308 Q257 316 263 322" stroke="#FAF6EF" stroke-width="1.5" fill="none"/>
+    </g>
+
+    <!-- MAIN TEMPLE STRUCTURE (DRAVIDIAN VIMANA & MANDAPA) -->
+    <!-- Mandapa Lower Storey -->
+    <rect x="110" y="245" width="180" height="55" fill="url(#basaltStone)" stroke="#1F2A44" stroke-width="1.5"/>
+    <!-- Carved Pilasters on lower wall -->
+    <g stroke="#1F2A44" stroke-width="1.5" fill="#585E6E">
+      <rect x="120" y="250" width="8" height="50"/>
+      <rect x="145" y="250" width="8" height="50"/>
+      <rect x="170" y="250" width="8" height="50"/>
+      <rect x="222" y="250" width="8" height="50"/>
+      <rect x="247" y="250" width="8" height="50"/>
+      <rect x="272" y="250" width="8" height="50"/>
+      <!-- Central Sanctum Doorway (Garbhagriha entrance) -->
+      <rect x="188" y="260" width="24" height="40" fill="#15171C"/>
+    </g>
+
+    <!-- Mandapa Roof & Upper Eaves (Kapota) -->
+    <polygon points="100,245 300,245 290,235 110,235" fill="#3D414D" stroke="#1F2A44" stroke-width="1.5"/>
+    <line x1="105" y1="240" x2="295" y2="240" stroke="#E8DEC8" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- TOWERING PYRAMIDAL VIMANA (SHIKHARA) - Tier 1 -->
+    <rect x="145" y="200" width="110" height="35" fill="url(#basaltStone)" stroke="#1F2A44" stroke-width="1.5"/>
+    <!-- Kudu arched decorative windows / niches -->
+    <path d="M160 215 C160 205 170 205 170 215 Z" fill="#15171C"/>
+    <path d="M195 215 C195 205 205 205 205 215 Z" fill="#15171C"/>
+    <path d="M230 215 C230 205 240 205 240 215 Z" fill="#15171C"/>
+    <polygon points="140,200 260,200 252,190 148,190" fill="#3D414D" stroke="#1F2A44" stroke-width="1.5"/>
+
+    <!-- Vimana Tier 2 -->
+    <rect x="155" y="160" width="90" height="30" fill="url(#basaltStone)" stroke="#1F2A44" stroke-width="1.5"/>
+    <path d="M172 175 C172 167 180 167 180 175 Z" fill="#15171C"/>
+    <path d="M220 175 C220 167 228 167 228 175 Z" fill="#15171C"/>
+    <polygon points="150,160 250,160 242,150 158,150" fill="#3D414D" stroke="#1F2A44" stroke-width="1.5"/>
+
+    <!-- Vimana Tier 3 -->
+    <rect x="168" y="125" width="64" height="25" fill="url(#basaltStone)" stroke="#1F2A44" stroke-width="1.5"/>
+    <polygon points="164,125 236,125 230,118 170,118" fill="#3D414D" stroke="#1F2A44" stroke-width="1.5"/>
+
+    <!-- Vimana Griva & Octagonal Shikhara Dome -->
+    <ellipse cx="200" cy="115" rx="25" ry="8" fill="#282B33"/>
+    <path d="M178 115 C178 92 222 92 222 115 Z" fill="url(#basaltStone)" stroke="#1F2A44" stroke-width="1.5"/>
+    <!-- Fluting ribs on dome -->
+    <line x1="200" y1="92" x2="200" y2="115" stroke="#8F96A6" stroke-width="1.5"/>
+    <path d="M188 115 C190 100 196 95 200 92" stroke="#8F96A6" stroke-width="1" fill="none"/>
+    <path d="M212 115 C210 100 204 95 200 92" stroke="#8F96A6" stroke-width="1" fill="none"/>
+
+    <!-- Kalasha (Sacred Pot Finial atop Kailasa) -->
+    <circle cx="200" cy="85" r="7" fill="#D49A3D" stroke="#8F591E" stroke-width="1.2"/>
+    <polygon points="197,80 200,72 203,80" fill="#D49A3D"/>
+
+    <!-- MONOLITHIC DHWAJASTHAMBHA (VICTORY COLUMN ON LEFT) -->
+    <rect x="85" y="195" width="14" height="120" fill="url(#basaltStone)" stroke="#1F2A44" stroke-width="1.2"/>
+    <!-- Capital on pillar -->
+    <polygon points="80,195 104,195 98,185 86,185" fill="#3D414D" stroke="#1F2A44" stroke-width="1"/>
+    <!-- Trishula motif on column summit -->
+    <path d="M89 185 L89 175 M92 185 L92 170 M95 185 L95 175" stroke="#D49A3D" stroke-width="1.8"/>
+
+    <!-- Nandi Mandapa pavilion in foreground right -->
+    <rect x="290" y="275" width="28" height="40" fill="#3D414D" stroke="#1F2A44" stroke-width="1.2"/>
+    <polygon points="286,275 322,275 316,265 292,265" fill="#282B33"/>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8C5E3C" text-anchor="middle" letter-spacing="1.5">RASHTRAKUTA · 8th CENTURY CE</text>
+</svg>

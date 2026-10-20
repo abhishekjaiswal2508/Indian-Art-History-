@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0A23A" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chunarSandstone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5B56E"/>
+      <stop offset="45%" stop-color="#C28B45"/>
+      <stop offset="80%" stop-color="#9C6628"/>
+      <stop offset="100%" stop-color="#6F4517"/>
+    </linearGradient>
+    <linearGradient id="goldPolish" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0D0" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#DCA556" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#996020" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="capitalShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Aura -->
+  <circle cx="200" cy="200" r="180" fill="url(#bgGlow2)"/>
+  <circle cx="200" cy="200" r="165" stroke="#E0A23A" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+
+  <g filter="url(#capitalShadow)">
+    <!-- INVERTED BELL LOTUS BASE -->
+    <path d="M140 325 C145 285 160 270 200 270 C240 270 255 285 260 325 C240 332 160 332 140 325 Z" 
+          fill="url(#chunarSandstone)"/>
+    <!-- Lotus Fluting & Petals -->
+    <path d="M152 324 C158 295 175 280 185 272" stroke="#6F4517" stroke-width="2" fill="none"/>
+    <path d="M170 327 C176 295 188 280 195 271" stroke="#6F4517" stroke-width="2" fill="none"/>
+    <path d="M200 328 L200 270" stroke="#FFE7BA" stroke-width="1.8" opacity="0.6"/>
+    <path d="M230 327 C224 295 212 280 205 271" stroke="#6F4517" stroke-width="2" fill="none"/>
+    <path d="M248 324 C242 295 225 280 215 272" stroke="#6F4517" stroke-width="2" fill="none"/>
+    
+    <!-- Base Bead/Cord border -->
+    <rect x="135" y="325" width="130" height="12" rx="4" fill="#9C6628" stroke="#6F4517" stroke-width="1.5"/>
+    <line x1="140" y1="331" x2="260" y2="331" stroke="#FFD899" stroke-width="2" stroke-dasharray="3 3"/>
+
+    <!-- CIRCULAR ABACUS (DRUM) -->
+    <rect x="130" y="240" width="140" height="30" rx="3" fill="url(#chunarSandstone)" stroke="#6F4517" stroke-width="1.5"/>
+    
+    <!-- Ashoka Chakra on Abacus (Center) -->
+    <g transform="translate(200, 255)">
+      <circle cx="0" cy="0" r="11" fill="#1F2A44"/>
+      <circle cx="0" cy="0" r="9" stroke="#E0A23A" stroke-width="1.5" fill="#FAF6EF"/>
+      <circle cx="0" cy="0" r="2.5" fill="#1F2A44"/>
+      <!-- 24 spokes -->
+      <g stroke="#1F2A44" stroke-width="0.8">
+        <line x1="0" y1="-8.5" x2="0" y2="8.5"/>
+        <line x1="-8.5" y1="0" x2="8.5" y2="0"/>
+        <line x1="-6" y1="-6" x2="6" y2="6"/>
+        <line x1="-6" y1="6" x2="6" y2="-6"/>
+        <line x1="-3.2" y1="-7.8" x2="3.2" y2="7.8"/>
+        <line x1="3.2" y1="-7.8" x2="-3.2" y2="7.8"/>
+        <line x1="-7.8" y1="-3.2" x2="7.8" y2="3.2"/>
+        <line x1="-7.8" y1="3.2" x2="7.8" y2="-3.2"/>
+      </g>
+    </g>
+
+    <!-- Galloping Bull & Horse silhouettes on abacus sides -->
+    <path d="M142 258 Q148 250 156 253 Q162 258 158 263" stroke="#52310F" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M242 254 Q250 250 256 257 Q252 263 244 262" stroke="#52310F" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- FOUR BACK-TO-BACK LIONS -->
+    <!-- Left Lion Profile -->
+    <g transform="translate(-32, 0)">
+      <path d="M165 240 C160 210 155 185 140 160 C130 145 132 130 145 125 C155 120 165 130 170 145 C175 160 175 200 175 240 Z" 
+            fill="#A87332"/>
+      <!-- Mane curls -->
+      <circle cx="150" cy="140" r="6" fill="#82521C"/>
+      <circle cx="145" cy="155" r="7" fill="#82521C"/>
+      <circle cx="150" cy="170" r="7" fill="#82521C"/>
+      <circle cx="158" cy="185" r="7.5" fill="#82521C"/>
+    </g>
+
+    <!-- Right Lion Profile -->
+    <g transform="translate(32, 0)">
+      <path d="M235 240 C240 210 245 185 260 160 C270 145 268 130 255 125 C245 120 235 130 230 145 C225 160 225 200 225 240 Z" 
+            fill="#A87332"/>
+      <!-- Mane curls -->
+      <circle cx="250" cy="140" r="6" fill="#82521C"/>
+      <circle cx="255" cy="155" r="7" fill="#82521C"/>
+      <circle cx="250" cy="170" r="7" fill="#82521C"/>
+      <circle cx="242" cy="185" r="7.5" fill="#82521C"/>
+    </g>
+
+    <!-- Center/Front Lion Body & Forelegs -->
+    <path d="M168 240 L172 170 C172 140 185 130 200 130 C215 130 228 140 228 170 L232 240 Z" fill="url(#chunarSandstone)"/>
+    <!-- Powerful forepaws standing on abacus -->
+    <path d="M172 240 L175 190 C175 185 186 185 186 190 L188 240 Z" fill="#B57E37" stroke="#6F4517" stroke-width="1.5"/>
+    <path d="M212 240 L214 190 C214 185 225 185 225 190 L228 240 Z" fill="#B57E37" stroke="#6F4517" stroke-width="1.5"/>
+    <!-- Paws with claws -->
+    <ellipse cx="180" cy="239" rx="8" ry="4" fill="#6F4517"/>
+    <ellipse cx="220" cy="239" rx="8" ry="4" fill="#6F4517"/>
+
+    <!-- Stylized flame-like / spiral mane locks (Center Lion) -->
+    <g fill="#8F591E" stroke="#5E380E" stroke-width="1">
+      <path d="M182 145 Q190 135 198 145 Q190 155 182 145 Z"/>
+      <path d="M202 145 Q210 135 218 145 Q210 155 202 145 Z"/>
+      <path d="M175 160 Q185 150 195 160 Q185 170 175 160 Z"/>
+      <path d="M205 160 Q215 150 225 160 Q215 170 205 160 Z"/>
+      <path d="M182 175 Q192 165 202 175 Q192 185 182 175 Z"/>
+      <path d="M198 175 Q208 165 218 175 Q208 185 198 175 Z"/>
+    </g>
+
+    <!-- Front Lion Head & Roaring Muzzle -->
+    <path d="M178 95 C170 105 170 120 178 132 C188 140 212 140 222 132 C230 120 230 105 222 95 C212 85 188 85 178 95 Z" 
+          fill="url(#chunarSandstone)" stroke="#6F4517" stroke-width="1.5"/>
+    <!-- Ears -->
+    <path d="M175 90 C168 85 172 75 180 82 Z" fill="#8F591E" stroke="#6F4517" stroke-width="1"/>
+    <path d="M225 90 C232 85 228 75 220 82 Z" fill="#8F591E" stroke="#6F4517" stroke-width="1"/>
+
+    <!-- Eyes (fierce, alert, inlaid sockets) -->
+    <ellipse cx="188" cy="104" rx="4" ry="2.5" fill="#1F2A44"/>
+    <ellipse cx="212" cy="104" rx="4" ry="2.5" fill="#1F2A44"/>
+    <circle cx="187" cy="103" r="1" fill="#FFFFFF"/>
+    <circle cx="211" cy="103" r="1" fill="#FFFFFF"/>
+
+    <!-- Nose & Snout -->
+    <path d="M196 102 L204 102 L202 113 L198 113 Z" fill="#6F4517"/>
+    <path d="M195 113 C190 113 186 118 192 122 C197 122 199 118 200 114 C201 118 203 122 208 122 C214 118 210 113 205 113 Z" fill="#52310F"/>
+    
+    <!-- Open Jaws & Whiskers -->
+    <path d="M193 123 C197 128 203 128 207 123" stroke="#FAF6EF" stroke-width="2" fill="none"/>
+    <path d="M195 125 C198 131 202 131 205 125" stroke="#1F2A44" stroke-width="2" fill="#8F251E"/>
+    
+    <!-- High Mauryan Polish Highlight -->
+    <path d="M185 92 Q200 86 215 92" stroke="url(#goldPolish)" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#E0A23A" text-anchor="middle" letter-spacing="1.5">MAURYAN EMPIRE · c. 250 BCE</text>
+</svg>

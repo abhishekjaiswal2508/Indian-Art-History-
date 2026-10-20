@@ -1,0 +1,1760 @@
+/* ==========================================================================
+   KALA YATRA: A Timeline of Indian Art
+   Main Stylesheet - Museum-grade Design System
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties / Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Museum Palette */
+  --bg-primary: #FAF6EF;       /* Warm museum parchment off-white */
+  --bg-secondary: #F3ECE1;     /* Subtle warm surface */
+  --bg-card: #FFFFFF;          /* Pure crisp white card surface */
+  --bg-card-hover: #FFFDF9;
+  --bg-dark: #121927;          /* Midnight museum navy */
+  
+  /* Text & Inks */
+  --text-primary: #1F2A44;     /* Deep indigo ink */
+  --text-secondary: #586377;   /* Muted charcoal slate */
+  --text-tertiary: #848FA2;    /* Soft caption gray */
+  --text-light: #FAF6EF;
+
+  /* Signature Indian Accents */
+  --brand-indigo: #1F2A44;     /* Royal Ajanta Indigo */
+  --brand-terracotta: #C65D3B; /* Harappan Terracotta */
+  --brand-gold: #E0A23A;       /* Temple Gold / Saffron */
+  --brand-teal: #2F6F6B;       /* Verdigris & Lapis Teal */
+  --brand-crimson: #A83232;    /* Mughal Vermilion */
+
+  /* Era Accent Colors */
+  --era-ancient: #C65D3B;      /* Terracotta */
+  --era-classical: #D49A3D;    /* Chunar Sandstone */
+  --era-medieval: #8C5E3C;     /* Chola Temple Bronze */
+  --era-mughal: #23496D;       /* Royal Lapis */
+  --era-colonial: #9B7B4B;     /* Antique Ochre */
+  --era-modern: #2F6F6B;       /* Modern Teal */
+  --era-folk: #C65D3B;         /* Living Folk */
+
+  /* Borders & Shadows */
+  --border-light: rgba(31, 42, 68, 0.08);
+  --border-medium: rgba(31, 42, 68, 0.16);
+  --border-gold: rgba(224, 162, 58, 0.35);
+  
+  --shadow-sm: 0 2px 8px rgba(31, 42, 68, 0.04);
+  --shadow-md: 0 8px 24px rgba(31, 42, 68, 0.08);
+  --shadow-lg: 0 16px 40px rgba(31, 42, 68, 0.12);
+  --shadow-xl: 0 24px 60px rgba(31, 42, 68, 0.18);
+  --shadow-gold: 0 0 25px rgba(224, 162, 58, 0.25);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout & Animation */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 0.25s;
+  --duration-normal: 0.45s;
+  --duration-slow: 0.75s;
+  
+  --nav-height: 72px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Global Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 3px;
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. Decorative Background Motifs
+   -------------------------------------------------------------------------- */
+.bg-ambient-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.mandala-float {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  background: url('../assets/patterns/mandala-bg.svg') no-repeat center / contain;
+  opacity: 0.45;
+  animation: floatMandala 40s linear infinite;
+  filter: blur(0.5px);
+}
+
+.mandala-1 {
+  top: -120px;
+  right: -100px;
+}
+
+.mandala-2 {
+  bottom: 10%;
+  left: -150px;
+  width: 650px;
+  height: 650px;
+  animation-duration: 55s;
+  animation-direction: reverse;
+  opacity: 0.35;
+}
+
+@keyframes floatMandala {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   4. Hero Section
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 24px;
+  text-align: center;
+  z-index: 1;
+  background: radial-gradient(circle at 50% 30%, rgba(224, 162, 58, 0.12) 0%, rgba(250, 246, 239, 0) 70%);
+}
+
+.hero-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(198, 93, 59, 0.08);
+  border: 1px solid rgba(198, 93, 59, 0.22);
+  color: var(--brand-terracotta);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  animation: fadeInDown 0.8s var(--ease-smooth);
+}
+
+.hero-team-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-medium);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  animation: fadeInDown 0.85s var(--ease-smooth);
+}
+
+.hero-team-label {
+  font-weight: 700;
+  color: var(--brand-indigo);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.775rem;
+}
+
+.hero-team-member {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-primary);
+}
+
+.hero-team-member strong {
+  color: var(--brand-indigo);
+}
+
+.hero-team-member code {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  background: rgba(198, 93, 59, 0.1);
+  color: var(--brand-terracotta);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.hero-team-sep {
+  color: var(--border-medium);
+}
+
+.hero-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--brand-terracotta);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.5; }
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 6.5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--brand-indigo);
+  margin-bottom: 20px;
+  line-height: 1.1;
+  animation: fadeInUp 0.9s var(--ease-smooth);
+}
+
+.hero-title span {
+  color: var(--brand-terracotta);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0 auto 36px;
+  font-weight: 400;
+  line-height: 1.6;
+  animation: fadeInUp 1s var(--ease-smooth);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  animation: fadeInUp 1.1s var(--ease-smooth);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, var(--brand-indigo) 0%, #293859 100%);
+  color: #FAF6EF;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(255,255,255,0.1) inset;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  background: linear-gradient(135deg, var(--brand-terracotta) 0%, #D46F4F 100%);
+}
+
+.btn-primary svg {
+  transition: transform var(--duration-fast) var(--ease-smooth);
+}
+
+.btn-primary:hover svg {
+  transform: translateY(3px);
+}
+
+.btn-sound-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.btn-sound-toggle:hover {
+  border-color: var(--brand-gold);
+  background: #FFFDF8;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-sound-toggle.is-playing {
+  background: rgba(224, 162, 58, 0.15);
+  border-color: var(--brand-gold);
+  color: #946012;
+}
+
+/* Hero Stat Badges */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  animation: fadeInUp 1.2s var(--ease-smooth);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-indigo);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--border-medium);
+}
+
+/* --------------------------------------------------------------------------
+   5. Sticky Navigation Bar & Era Filter Controls
+   -------------------------------------------------------------------------- */
+.sticky-bar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 246, 239, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.sticky-bar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sticky-bar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brand-indigo);
+}
+
+.nav-brand-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--brand-terracotta);
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+/* Search input */
+.search-wrapper {
+  position: relative;
+  min-width: 240px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 16px 8px 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-card);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.search-input:focus {
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 3px rgba(224, 162, 58, 0.2);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+
+/* View Mode & Nav controls */
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-medium);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.btn-icon:hover {
+  background: var(--brand-indigo);
+  color: #fff;
+  border-color: var(--brand-indigo);
+}
+
+.btn-view-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-card);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.btn-view-toggle:hover {
+  border-color: var(--brand-gold);
+}
+
+/* Era Filter Chips */
+.era-filters-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.era-filters-track::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.filter-chip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  cursor: pointer;
+}
+
+.filter-chip:hover {
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+  background: var(--bg-card-hover);
+}
+
+.filter-chip.is-active {
+  background: var(--brand-indigo);
+  color: #FAF6EF;
+  border-color: var(--brand-indigo);
+  box-shadow: var(--shadow-sm);
+}
+
+.chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Overall Timeline Progress Meter */
+.timeline-meter-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(31, 42, 68, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.timeline-meter-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--brand-terracotta), var(--brand-gold), var(--brand-teal));
+  border-radius: var(--radius-full);
+  transition: width 0.15s ease-out;
+}
+
+/* --------------------------------------------------------------------------
+   6. First-Time Hint Banner
+   -------------------------------------------------------------------------- */
+.hint-banner {
+  max-width: 900px;
+  margin: 16px auto 0;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(224, 162, 58, 0.14);
+  border: 1px dashed rgba(224, 162, 58, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: #7A4F1D;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.hint-banner button {
+  color: #7A4F1D;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0 4px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Timeline Section Container
+   -------------------------------------------------------------------------- */
+.timeline-section {
+  position: relative;
+  padding: 80px 0 120px;
+  z-index: 1;
+  min-height: 980px;
+}
+
+/* Timeline navigation helper arrows (attached to timeline section) */
+.timeline-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-lg);
+  color: var(--brand-indigo);
+  display: grid;
+  place-items: center;
+  z-index: 30;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.timeline-nav-btn:hover {
+  background: var(--brand-indigo);
+  color: #FAF6EF;
+  border-color: var(--brand-indigo);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: var(--shadow-xl), var(--shadow-gold);
+}
+
+.timeline-nav-btn.prev {
+  left: 24px;
+}
+
+.timeline-nav-btn.next {
+  right: 24px;
+}
+
+/* HORIZONTAL TIMELINE VIEW (Desktop Default) */
+.timeline-horizontal-container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 40px 0 60px;
+  cursor: grab;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-gold) transparent;
+  user-select: none;
+}
+
+.timeline-horizontal-container:active {
+  cursor: grabbing;
+}
+
+.timeline-horizontal-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timeline-horizontal-container::-webkit-scrollbar-track {
+  background: rgba(31, 42, 68, 0.04);
+}
+
+.timeline-horizontal-container::-webkit-scrollbar-thumb {
+  background-color: var(--brand-gold);
+  border-radius: var(--radius-full);
+}
+
+/* Central Continuous Axis Line */
+.timeline-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  height: 880px;
+  padding: 0 120px;
+}
+
+.timeline-center-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--era-ancient) 0%, 
+    var(--era-classical) 22%, 
+    var(--era-medieval) 48%, 
+    var(--era-mughal) 70%, 
+    var(--era-colonial) 84%, 
+    var(--era-modern) 100%
+  );
+  transform: translateY(-50%);
+  z-index: 2;
+  box-shadow: 0 0 16px rgba(224, 162, 58, 0.4);
+}
+
+/* Century tick marks on central line */
+.century-ticker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.century-tick {
+  width: 2px;
+  height: 20px;
+  background: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+.century-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+  background: rgba(250, 246, 239, 0.85);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* Timeline Node Column */
+.timeline-node {
+  position: relative;
+  width: 320px;
+  margin: 0 45px;
+  height: 100%;
+  flex-shrink: 0;
+  z-index: 5;
+  transition: opacity var(--duration-normal) var(--ease-smooth),
+              transform var(--duration-normal) var(--ease-smooth);
+}
+
+/* Alternating Card Placement (Top / Bottom) */
+.timeline-node.pos-top .timeline-card {
+  position: absolute;
+  bottom: calc(50% + 46px);
+  left: 0;
+  width: 100%;
+}
+
+.timeline-node.pos-bottom .timeline-card {
+  position: absolute;
+  top: calc(50% + 46px);
+  left: 0;
+  width: 100%;
+}
+
+/* Connecting Stem Pin to Central Line */
+.timeline-node.pos-top .timeline-pin {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 46px;
+  width: 2px;
+  border-left: 2px dashed var(--border-medium);
+  z-index: 3;
+}
+
+.timeline-node.pos-bottom .timeline-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 46px;
+  width: 2px;
+  border-left: 2px dashed var(--border-medium);
+  z-index: 3;
+}
+
+/* Circular Center Marker */
+.timeline-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3.5px solid var(--era-ancient);
+  z-index: 10;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.95), var(--shadow-sm);
+  transition: transform var(--duration-fast) var(--ease-smooth),
+              box-shadow var(--duration-fast) var(--ease-smooth);
+  cursor: pointer;
+}
+
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.9;
+}
+
+.timeline-node:hover .timeline-marker {
+  transform: translate(-50%, -50%) scale(1.4);
+  box-shadow: 0 0 0 8px rgba(224, 162, 58, 0.3), var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   8. Artifact Card Design
+   -------------------------------------------------------------------------- */
+.timeline-card {
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-normal) var(--ease-smooth),
+              box-shadow var(--duration-normal) var(--ease-smooth),
+              border-color var(--duration-normal) var(--ease-smooth);
+  cursor: pointer;
+  position: relative;
+  will-change: transform;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  border-color: var(--border-gold);
+}
+
+.timeline-card:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 4px;
+}
+
+/* Card Visual Header */
+.card-visual-wrapper {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.card-visual-wrapper svg,
+.card-visual-wrapper img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.timeline-card:hover .card-visual-wrapper svg,
+.timeline-card:hover .card-visual-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Era badge on card */
+.card-era-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--text-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Inspect indicator badge */
+.card-inspect-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  color: var(--brand-indigo);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.timeline-card:hover .card-inspect-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Card Body Content */
+.card-body {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-date {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--brand-terracotta);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-indigo);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.card-region {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-summary {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-action-link {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--brand-terracotta);
+  transition: gap var(--duration-fast) ease;
+}
+
+.timeline-card:hover .card-action-link {
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Vertical Timeline Mode (Mobile & Optional View)
+   -------------------------------------------------------------------------- */
+.timeline-vertical-container {
+  display: none; /* activated in vertical mode or mobile */
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.timeline-vertical-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, 
+    var(--era-ancient) 0%, 
+    var(--era-classical) 25%, 
+    var(--era-medieval) 50%, 
+    var(--era-mughal) 70%, 
+    var(--era-colonial) 85%, 
+    var(--era-modern) 100%
+  );
+  z-index: 1;
+}
+
+.v-node {
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  width: 100%;
+}
+
+.v-node:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.v-node:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.v-node .timeline-card {
+  width: calc(50% - 40px);
+}
+
+.v-marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--era-ancient);
+  z-index: 10;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   10. Interactive Modal / Artifact Deep Dive Panel
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 25, 39, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-smooth);
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 980px;
+  max-height: 90vh;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  overflow: hidden;
+  transform: scale(0.92) translateY(20px);
+  opacity: 0;
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.modal-backdrop.is-open .modal-card {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Modal Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.modal-close-btn:hover {
+  background: var(--brand-indigo);
+  color: #FAF6EF;
+  transform: rotate(90deg);
+}
+
+/* Modal Left Column: Large Visual Showcase */
+.modal-visual-column {
+  background: var(--bg-secondary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  overflow: hidden;
+  border-right: 1px solid var(--border-light);
+}
+
+.modal-visual-frame {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-visual-frame svg,
+.modal-visual-frame img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: opacity var(--duration-fast) ease;
+}
+
+/* Replica Toggle Switch (Stylized Vector vs Archival Photo) */
+.replica-toggle-box {
+  margin-top: 18px;
+  display: inline-flex;
+  background: rgba(31, 42, 68, 0.08);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 2px;
+}
+
+.replica-toggle-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.replica-toggle-btn.is-active {
+  background: var(--bg-card);
+  color: var(--brand-indigo);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Image Credit Footnote */
+.modal-credit {
+  margin-top: 12px;
+  font-size: 0.725rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Modal Right Column: Scrollable Narrative Content */
+.modal-narrative-column {
+  padding: 36px 36px 36px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 88vh;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-gold) rgba(31, 42, 68, 0.05);
+}
+
+.modal-narrative-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-narrative-column::-webkit-scrollbar-thumb {
+  background: var(--brand-gold);
+  border-radius: var(--radius-full);
+}
+
+.modal-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.modal-era-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: var(--brand-terracotta);
+}
+
+.modal-date-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--brand-terracotta);
+  letter-spacing: 0.5px;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-indigo);
+  line-height: 1.2;
+}
+
+/* Quick Facts Grid */
+.modal-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background: var(--bg-secondary);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.fact-box-label {
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.fact-box-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Narrative Body */
+.modal-story {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Why It Matters Callout Box */
+.callout-box {
+  background: rgba(224, 162, 58, 0.12);
+  border-left: 4px solid var(--brand-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 18px;
+}
+
+.callout-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8C5914;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.callout-text {
+  font-size: 0.9rem;
+  color: #5C3D12;
+  line-height: 1.5;
+}
+
+/* Fun Fact Card */
+.fun-fact-box {
+  background: rgba(47, 111, 107, 0.08);
+  border: 1px dashed rgba(47, 111, 107, 0.3);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.fun-fact-icon {
+  font-size: 1.25rem;
+}
+
+.fun-fact-text {
+  font-size: 0.875rem;
+  color: #1F5450;
+  line-height: 1.5;
+}
+
+/* Modal Bottom Navigation Controls (Previous & Next Artifact) */
+.modal-nav-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-modal-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-card);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.btn-modal-nav:hover {
+  background: var(--brand-indigo);
+  color: #fff;
+  border-color: var(--brand-indigo);
+}
+
+/* --------------------------------------------------------------------------
+   11. Educational Era Overview Drawer / Info Cards
+   -------------------------------------------------------------------------- */
+.era-guide-section {
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  padding: 0 24px;
+}
+
+.section-header-centered {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--brand-indigo);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.era-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.era-summary-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 4px solid var(--era-ancient);
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+
+.era-summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.era-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--brand-indigo);
+}
+
+.era-card-dates {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.era-card-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   11b. Project Creators / Team Section
+   -------------------------------------------------------------------------- */
+.team-section {
+  max-width: 1200px;
+  margin: 30px auto 80px;
+  padding: 0 24px;
+  scroll-margin-top: 100px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.team-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid var(--brand-gold);
+  transition: transform var(--duration-fast) var(--ease-smooth),
+              box-shadow var(--duration-fast) var(--ease-smooth),
+              border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  border-top-color: var(--brand-terracotta);
+}
+
+.team-avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-indigo), #324368);
+  color: #FAF6EF;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  box-shadow: 0 0 0 4px rgba(224, 162, 58, 0.25);
+}
+
+.team-card:nth-child(2) .team-avatar {
+  background: linear-gradient(135deg, var(--brand-terracotta), #E07D5D);
+}
+
+.team-card:nth-child(3) .team-avatar {
+  background: linear-gradient(135deg, var(--brand-teal), #489B96);
+}
+
+.team-card:nth-child(4) .team-avatar {
+  background: linear-gradient(135deg, #8C5E3C, #BD855B);
+}
+
+.team-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-indigo);
+  margin-bottom: 2px;
+}
+
+.team-reg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(31, 42, 68, 0.06);
+  border: 1px solid var(--border-medium);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+}
+
+.reg-label {
+  font-weight: 700;
+  color: var(--text-tertiary);
+  letter-spacing: 0.5px;
+}
+
+.reg-value {
+  font-weight: 700;
+  color: var(--brand-terracotta);
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.team-role {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   12. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 70px 24px 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-brand h3 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: rgba(250, 246, 239, 0.7);
+  max-width: 440px;
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+
+.footer-heading {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--brand-gold);
+  margin-bottom: 16px;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: rgba(250, 246, 239, 0.7);
+}
+
+.footer-list a:hover {
+  color: var(--brand-gold);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.825rem;
+  color: rgba(250, 246, 239, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   13. Responsive Breakpoints & View Modes
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .modal-card {
+    grid-template-columns: 1fr;
+    max-height: 94vh;
+  }
+  
+  .modal-visual-column {
+    height: 300px;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .modal-visual-frame {
+    height: 220px;
+  }
+
+  .modal-narrative-column {
+    padding: 24px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Auto-switch to Vertical layout on Mobile & Tablet */
+@media (max-width: 860px) {
+  .timeline-nav-btn {
+    display: none !important;
+  }
+
+  .timeline-horizontal-container {
+    display: none;
+  }
+
+  .timeline-vertical-container {
+    display: block;
+  }
+
+  .timeline-vertical-line {
+    left: 24px;
+  }
+
+  .v-node {
+    justify-content: flex-start !important;
+    padding-left: 56px;
+  }
+
+  .v-node .timeline-card {
+    width: 100%;
+  }
+
+  .v-marker {
+    left: 24px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .stat-divider {
+    width: 60px;
+    height: 1px;
+  }
+
+  .modal-facts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* User Forced Vertical Mode on Desktop */
+body.force-vertical .timeline-horizontal-container {
+  display: none;
+}
+
+body.force-vertical .timeline-vertical-container {
+  display: block;
+}
+
+body.force-vertical .timeline-nav-btn {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   14. Animations & Accessibility
+   -------------------------------------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .mandala-float {
+    animation: none;
+  }
+}

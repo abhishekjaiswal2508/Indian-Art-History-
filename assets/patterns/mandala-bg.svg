@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none">
+  <defs>
+    <radialGradient id="mandalaGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0A23A" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#C65D3B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#1F2A44" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Central core -->
+  <circle cx="300" cy="300" r="18" fill="#E0A23A" fill-opacity="0.25"/>
+  <circle cx="300" cy="300" r="32" stroke="#E0A23A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+  <circle cx="300" cy="300" r="50" stroke="#C65D3B" stroke-width="1" opacity="0.35"/>
+
+  <!-- 8 Petals Ring 1 -->
+  <g stroke="#C65D3B" stroke-width="1.2" fill="none" opacity="0.45">
+    <path d="M300 250 C315 265 315 285 300 300 C285 285 285 265 300 250 Z" />
+    <path d="M300 350 C315 335 315 315 300 300 C285 315 285 335 300 350 Z" />
+    <path d="M250 300 C265 315 285 315 300 300 C285 285 265 285 250 300 Z" />
+    <path d="M350 300 C335 315 315 315 300 300 C315 285 335 285 350 300 Z" />
+    <path d="M265 265 C286 275 295 290 300 300 C290 295 275 286 265 265 Z" />
+    <path d="M335 265 C314 275 305 290 300 300 C310 295 325 286 335 265 Z" />
+    <path d="M265 335 C286 325 295 310 300 300 C290 305 275 314 265 335 Z" />
+    <path d="M335 335 C314 325 305 310 300 300 C310 305 325 314 335 335 Z" />
+  </g>
+
+  <!-- Ring 2 - 16 lotus points -->
+  <circle cx="300" cy="300" r="90" stroke="#E0A23A" stroke-width="1" opacity="0.3"/>
+  <circle cx="300" cy="300" r="105" stroke="#2F6F6B" stroke-width="1.2" stroke-dasharray="2 6" opacity="0.4"/>
+
+  <!-- Ornate scalloped outer ring -->
+  <g stroke="#E0A23A" stroke-width="1.2" fill="none" opacity="0.35">
+    <path d="M300 160 C325 185 325 215 300 240 C275 215 275 185 300 160 Z" />
+    <path d="M300 440 C325 415 325 385 300 360 C275 385 275 415 300 440 Z" />
+    <path d="M160 300 C185 325 215 325 240 300 C215 275 185 275 160 300 Z" />
+    <path d="M440 300 C415 325 385 325 360 300 C385 275 415 275 440 300 Z" />
+    <path d="M201 201 C230 215 245 240 255 255 C240 245 215 230 201 201 Z" />
+    <path d="M399 201 C370 215 355 240 345 255 C360 245 385 230 399 201 Z" />
+    <path d="M201 399 C230 385 245 360 255 345 C240 355 215 370 201 399 Z" />
+    <path d="M399 399 C370 385 355 360 345 345 C360 355 385 370 399 399 Z" />
+  </g>
+
+  <!-- Large outer boundary -->
+  <circle cx="300" cy="300" r="170" stroke="#1F2A44" stroke-width="1" stroke-dasharray="3 5" opacity="0.25"/>
+  <circle cx="300" cy="300" r="210" stroke="#C65D3B" stroke-width="1.5" opacity="0.2"/>
+  <circle cx="300" cy="300" r="240" stroke="#E0A23A" stroke-width="0.75" stroke-dasharray="6 6" opacity="0.3"/>
+  <circle cx="300" cy="300" r="275" stroke="#2F6F6B" stroke-width="1.2" opacity="0.15"/>
+</svg>

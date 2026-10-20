@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="natarajaAura" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#E0A23A" stop-opacity="0.3"/>
+      <stop offset="45%" stop-color="#C65D3B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FAF6EF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cholaBronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#AF7D43"/>
+      <stop offset="50%" stop-color="#7A5224"/>
+      <stop offset="100%" stop-color="#472C0D"/>
+    </linearGradient>
+    <linearGradient id="fireRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2A33A"/>
+      <stop offset="50%" stop-color="#D95B30"/>
+      <stop offset="100%" stop-color="#9C2718"/>
+    </linearGradient>
+    <filter id="natarajaShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2A44" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="200" r="185" fill="url(#natarajaAura)"/>
+
+  <!-- BASE PEDESTAL (Padmapitha / Lotus Base) -->
+  <g transform="translate(200, 345)" filter="url(#natarajaShadow)">
+    <rect x="-70" y="0" width="140" height="15" rx="3" fill="#472C0D"/>
+    <!-- Inverted and upright lotus tiers -->
+    <ellipse cx="0" cy="0" rx="65" ry="7" fill="#7A5224" stroke="#472C0D" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-6" rx="55" ry="6" fill="#AF7D43" stroke="#472C0D" stroke-width="1.5"/>
+    <!-- Lotus petal notches -->
+    <g stroke="#472C0D" stroke-width="1">
+      <line x1="-45" y1="0" x2="-45" y2="-6"/>
+      <line x1="-25" y1="0" x2="-25" y2="-6"/>
+      <line x1="0" y1="0" x2="0" y2="-6"/>
+      <line x1="25" y1="0" x2="25" y2="-6"/>
+      <line x1="45" y1="0" x2="45" y2="-6"/>
+    </g>
+  </g>
+
+  <!-- PRABHAMANDALA (RING OF COSMIC FIRE - TIRUVASI) -->
+  <g filter="url(#natarajaShadow)">
+    <!-- Outer arch ring -->
+    <circle cx="200" cy="190" r="132" fill="none" stroke="url(#fireRing)" stroke-width="6"/>
+    <circle cx="200" cy="190" r="126" fill="none" stroke="#7A5224" stroke-width="2"/>
+    <circle cx="200" cy="190" r="138" fill="none" stroke="#7A5224" stroke-width="1.5"/>
+
+    <!-- Three-tongued flame motifs (Jvalas) radiating around ring -->
+    <!-- Top & Diagonal Flames -->
+    <g fill="#E0A23A" stroke="#C65D3B" stroke-width="1">
+      <!-- 12 o'clock -->
+      <polygon points="196,55 200,42 204,55 200,52"/>
+      <!-- Flames at intervals around circumference -->
+      <path d="M245 68 Q258 58 252 74 Z"/>
+      <path d="M285 100 Q302 96 290 110 Z"/>
+      <path d="M316 145 Q334 148 318 160 Z"/>
+      <path d="M326 195 Q344 204 324 212 Z"/>
+      <path d="M312 245 Q325 258 305 260 Z"/>
+      <path d="M280 290 Q288 305 270 302 Z"/>
+
+      <path d="M155 68 Q142 58 148 74 Z"/>
+      <path d="M115 100 Q98 96 110 110 Z"/>
+      <path d="M84 145 Q66 148 82 160 Z"/>
+      <path d="M74 195 Q56 204 76 212 Z"/>
+      <path d="M88 245 Q75 258 95 260 Z"/>
+      <path d="M120 290 Q112 305 130 302 Z"/>
+    </g>
+
+    <!-- APASMARA PURUSHA (DWARF OF IGNORANCE CRUSHED UNDER FOOT) -->
+    <g transform="translate(195, 326)">
+      <!-- Dwarf crawling on belly -->
+      <ellipse cx="5" cy="0" rx="22" ry="7" fill="url(#cholaBronze)" stroke="#472C0D" stroke-width="1.2"/>
+      <circle cx="-16" cy="-2" r="6" fill="url(#cholaBronze)" stroke="#472C0D" stroke-width="1.2"/>
+      <path d="M20 2 Q28 -4 24 6" stroke="#472C0D" stroke-width="2.5" fill="none"/>
+    </g>
+
+    <!-- NATARAJA: COSMIC DANCER FIGURE -->
+    <!-- Streaming Matted Jata Locks (Horizontally flying locks) -->
+    <g stroke="url(#cholaBronze)" stroke-width="2.8" fill="none">
+      <!-- Left streaming locks -->
+      <path d="M178 128 C155 125 125 132 95 130"/>
+      <path d="M178 132 C150 135 120 144 92 142"/>
+      <path d="M178 136 C152 145 122 155 100 155"/>
+      <!-- Right streaming locks -->
+      <path d="M222 128 C245 125 275 132 305 130"/>
+      <path d="M222 132 C250 135 280 144 308 142"/>
+      <path d="M222 136 C248 145 278 155 300 155"/>
+    </g>
+    <!-- River Goddess Ganga seated in locks on right -->
+    <circle cx="282" cy="126" r="3" fill="#E0A23A"/>
+    <!-- Crescent Moon on left locks -->
+    <path d="M115 124 A 4 4 0 0 0 115 132 A 3 3 0 0 1 115 124" fill="#FAF6EF"/>
+
+    <!-- Right Planted Leg (Firmly stepping on Apasmara's back) -->
+    <path d="M200 240 C198 265 196 295 198 322" stroke="url(#cholaBronze)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <ellipse cx="198" cy="324" rx="7" ry="4" fill="url(#cholaBronze)"/>
+
+    <!-- Left Lifted Leg (Kunchita Pada - crossed in front of body pointing right) -->
+    <path d="M198 238 C185 248 170 262 178 280 C182 290 205 285 235 260" 
+          stroke="url(#cholaBronze)" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <!-- Lifted foot angled gracefully upward -->
+    <ellipse cx="238" cy="256" rx="8" ry="4" transform="rotate(-30 238 256)" fill="url(#cholaBronze)"/>
+
+    <!-- Slender supple Torso & Fluttering Sash -->
+    <path d="M190 145 C186 175 186 210 198 240 C210 210 210 175 208 145 Z" fill="url(#cholaBronze)"/>
+    <!-- Sacred thread & jewel belts (Udarabandha) -->
+    <path d="M188 175 Q200 180 208 175" stroke="#E0A23A" stroke-width="1.8" fill="none"/>
+    <path d="M189 205 Q198 212 208 205" stroke="#E0A23A" stroke-width="2" fill="none"/>
+    <path d="M190 220 Q198 228 207 220" stroke="#E0A23A" stroke-width="2" fill="none"/>
+    <!-- Flying sash billowing to left -->
+    <path d="M188 206 C165 212 145 230 135 245 C145 240 165 224 190 218" fill="url(#cholaBronze)"/>
+
+    <!-- FOUR DANCING ARMS -->
+    <!-- 1. Upper Right Arm: Holding Damaru (Drum of Creation) -->
+    <path d="M206 150 C230 145 255 130 265 110" stroke="url(#cholaBronze)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- Damaru drum -->
+    <g transform="translate(268, 106) rotate(20)">
+      <polygon points="-5,-8 5,-8 0,0 -5,8 5,8" fill="#E0A23A" stroke="#472C0D" stroke-width="1"/>
+      <line x1="0" y1="0" x2="4" y2="3" stroke="#FAF6EF" stroke-width="1.5"/>
+    </g>
+
+    <!-- 2. Upper Left Arm: Holding Agni (Cosmic Fire in flame bowl) -->
+    <path d="M192 150 C168 145 145 130 135 110" stroke="url(#cholaBronze)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- Flame of transformation in hand -->
+    <g transform="translate(131, 102)">
+      <path d="M0 6 C-4 2 -6 -4 0 -10 C6 -4 4 2 0 6 Z" fill="#E0A23A" stroke="#C65D3B" stroke-width="1"/>
+      <circle cx="0" cy="8" r="4" fill="url(#cholaBronze)"/>
+    </g>
+
+    <!-- 3. Lower Right Arm: ABHAYA MUDRA (Gesture of Reassurance) -->
+    <path d="M207 165 C222 175 228 190 226 200" stroke="url(#cholaBronze)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- Hand in Abhaya + Bhujanga valaya (sacred serpent bracelet) -->
+    <circle cx="225" cy="202" r="6" fill="#FAF6EF" stroke="url(#cholaBronze)" stroke-width="2"/>
+    <path d="M222 195 Q230 190 234 198" stroke="#472C0D" stroke-width="1.5" fill="none"/>
+
+    <!-- 4. Lower Left Arm: GAJAHASTA MUDRA (Elephant trunk pointing to liberated left foot) -->
+    <path d="M193 165 C175 190 195 215 222 225" stroke="url(#cholaBronze)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- Elegant hand drooping downward diagonally toward the raised foot -->
+    <path d="M222 225 Q230 230 232 238" stroke="url(#cholaBronze)" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+    <!-- HEAD & JATAMUKUTA CROWN -->
+    <circle cx="200" cy="132" r="12" fill="url(#cholaBronze)"/>
+    <!-- Tall Jatamukuta crown with skull (Kapala) & peacock feather -->
+    <polygon points="194,122 206,122 203,96 197,96" fill="#AF7D43" stroke="#472C0D" stroke-width="1.2"/>
+    <circle cx="200" cy="95" r="3.5" fill="#E0A23A"/>
+    <!-- Serene, divine, impassive countenance (Samadhi in movement) -->
+    <ellipse cx="196" cy="132" rx="1.5" ry="1" fill="#472C0D"/>
+    <ellipse cx="204" cy="132" rx="1.5" ry="1" fill="#472C0D"/>
+    <circle cx="200" cy="128" r="1.2" fill="#E0A23A"/> <!-- Third Eye -->
+    <path d="M198 138 Q200 140 202 138" stroke="#472C0D" stroke-width="1.2" fill="none"/>
+  </g>
+
+  <!-- Era Label -->
+  <text x="200" y="385" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8C5E3C" text-anchor="middle" letter-spacing="1.5">CHOLA DYNASTY · c. 11th CENTURY CE</text>
+</svg>
